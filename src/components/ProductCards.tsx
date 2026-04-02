@@ -6,64 +6,63 @@ const products = [
     label: "Thuis",
     image: oranjeShirt,
     alt: "Oranje fan-versie thuisshirt WK 2026",
-    title: "Oranje thuisshirt 2026",
-    desc: "Oranje thuisshirt in fan-uitvoering, met comfortabele stof en sportieve pasvorm.",
-    note: "Pre‑order nu – beperkte eerste levering.",
+    title: "Oranje thuisshirt",
+    desc: "Fan-uitvoering met comfortabele stof en sportieve pasvorm.",
+    note: "Pre-order nu — beperkte eerste levering.",
   },
   {
     label: "Uit",
     image: witShirt,
     alt: "Wit fan-versie uitshirt WK 2026",
-    title: "Wit uitshirt 2026",
-    desc: "Wit uitshirt in fan-uitvoering, ideaal voor zomerse WK-avonden.",
-    note: "Pre‑order nu – uitshirt wordt tegelijk geleverd.",
+    title: "Wit uitshirt",
+    desc: "Fan-uitvoering, ideaal voor zomerse WK-avonden.",
+    note: "Pre-order nu — wordt tegelijk geleverd.",
   },
 ];
 
 const ProductCards = () => {
   return (
-    <section id="shirts" className="py-16 md:py-24 px-4">
+    <section id="shirts" className="py-20 md:py-32 px-4">
       <div className="container">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2">
-          KIES JE ORANJE SHIRT
-        </h2>
-        <p className="text-primary text-sm mb-10">
-          Zelfde Oranje vibe – zonder de officiële prijs.
-        </p>
+        <div className="mb-12">
+          <p className="text-primary text-xs font-medium tracking-wide mb-2">Collectie 2026</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
+            Kies je shirt
+          </h2>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {products.map((p) => (
-            <div key={p.title} className="bg-card border border-border rounded-lg overflow-hidden group">
-              <div className="relative">
-                <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-[10px] font-heading tracking-widest px-2.5 py-0.5 rounded-sm z-10">
-                  {p.label.toUpperCase()}
-                </span>
+            <div key={p.title} className="group rounded-xl overflow-hidden bg-card border border-border/50 hover:border-border transition-all duration-500">
+              <div className="relative overflow-hidden">
                 <img
                   src={p.image}
                   alt={p.alt}
                   loading="lazy"
                   width={800}
                   height={800}
-                  className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full aspect-[4/5] object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                 />
+                <span className="absolute top-4 left-4 bg-background/80 backdrop-blur-sm text-foreground text-[11px] font-heading font-medium px-3 py-1 rounded-full">
+                  {p.label}
+                </span>
               </div>
               <div className="p-6">
-                <span className="text-[10px] font-heading text-muted-foreground tracking-widest">FAN-VERSIE</span>
-                <h3 className="font-heading text-xl font-bold text-foreground mt-1 mb-2">{p.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{p.desc}</p>
-                <div className="flex items-baseline gap-2 mb-3">
+                <h3 className="font-heading text-xl font-bold text-foreground mb-1">{p.title}</h3>
+                <p className="text-sm text-muted-foreground mb-5">{p.desc}</p>
+                <div className="flex items-center gap-3 mb-4">
                   <span className="font-heading text-2xl font-bold text-foreground">€24,99</span>
-                  <span className="text-xs text-muted-foreground line-through">Nike: €109,99</span>
-                  <span className="bg-primary text-primary-foreground text-[10px] font-heading px-2 py-0.5 rounded-sm">
+                  <span className="text-xs text-muted-foreground line-through">€109,99</span>
+                  <span className="bg-primary/15 text-primary text-[11px] font-medium px-2 py-0.5 rounded-full">
                     −77%
                   </span>
                 </div>
-                <p className="text-xs text-muted-foreground mb-4">{p.note}</p>
+                <p className="text-xs text-muted-foreground mb-5">{p.note}</p>
                 <a
                   href="#pre-order"
-                  className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-heading text-xs tracking-widest px-6 py-2.5 rounded-sm transition-colors"
+                  className="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-primary-foreground font-heading text-sm font-medium py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_24px_hsl(24_95%_53%/0.25)]"
                 >
-                  PRE-ORDER {p.label.toUpperCase()}SHIRT
+                  Pre-order {p.label.toLowerCase()}shirt
                 </a>
               </div>
             </div>

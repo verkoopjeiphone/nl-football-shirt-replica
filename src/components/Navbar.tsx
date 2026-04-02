@@ -7,19 +7,19 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="container flex items-center justify-between h-16">
-        <a href="#" className="font-heading text-xl font-bold tracking-wider">
-          VOETBALSHIRTS<span className="text-primary">NL</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <div className="container flex items-center justify-between h-14">
+        <a href="#" className="font-heading text-lg font-semibold tracking-tight">
+          voetbalshirts<span className="text-primary">.nl</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
-              className="font-heading text-sm tracking-widest text-muted-foreground hover:text-foreground transition-colors"
+              className="font-body text-[13px] text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
-              {item.toUpperCase()}
+              {item}
             </a>
           ))}
         </div>
@@ -27,19 +27,19 @@ const Navbar = () => {
           className="md:hidden text-foreground"
           onClick={() => setOpen(!open)}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-background border-t border-border px-6 pb-4 space-y-3">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 px-6 pb-6 pt-2 space-y-4">
           {navItems.map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
-              className="block font-heading text-sm tracking-widest text-muted-foreground hover:text-foreground"
+              className="block font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setOpen(false)}
             >
-              {item.toUpperCase()}
+              {item}
             </a>
           ))}
         </div>
