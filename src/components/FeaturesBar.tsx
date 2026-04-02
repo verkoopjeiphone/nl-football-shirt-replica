@@ -3,38 +3,40 @@ import { Truck, Shirt, Tag, Trophy } from "lucide-react";
 const features = [
   {
     icon: Truck,
-    title: "Verzending vanuit Nederland",
-    desc: "Snelle levering zodra het WK-shirt binnen is.",
+    title: "Verzending NL",
+    desc: "Snelle levering zodra het shirt binnen is.",
   },
   {
     icon: Shirt,
-    title: "Comfortabele fan-versie",
-    desc: "Fijne pasvorm en ademende stof voor kijken en casual dragen.",
+    title: "Comfortabel",
+    desc: "Ademende stof, fijne pasvorm.",
   },
   {
     icon: Tag,
-    title: "Betaalbare prijs",
-    desc: "Slechts €24,99 — een fractie van de officiële prijs.",
+    title: "€24,99",
+    desc: "Een fractie van de officiële prijs.",
   },
   {
     icon: Trophy,
-    title: "Perfect voor het WK",
-    desc: "Voor in het stadion, de kroeg of op de bank.",
+    title: "WK-ready",
+    desc: "Stadion, kroeg of op de bank.",
   },
 ];
 
 const FeaturesBar = () => {
   return (
-    <section className="bg-features-bg border-y border-border py-6">
-      <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="border-y border-border/40 py-8">
+      <div className="container grid grid-cols-2 lg:grid-cols-4 gap-8">
         {features.map((f) => (
           <div key={f.title} className="flex items-start gap-3">
-            <f.icon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+              <f.icon className="w-4 h-4 text-primary" />
+            </div>
             <div>
-              <p className="font-heading text-xs tracking-widest text-foreground mb-1">
-                {f.title.toUpperCase()}
+              <p className="font-heading text-sm font-semibold text-foreground mb-0.5">
+                {f.title}
               </p>
-              <p className="text-xs text-muted-foreground">{f.desc}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
             </div>
           </div>
         ))}
